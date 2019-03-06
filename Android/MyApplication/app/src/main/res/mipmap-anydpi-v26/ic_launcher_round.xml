@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="AndroidLayouts">
+        <shared>
+            <config>
+                <device id="pixel" />
+                <device id="2.7in QVGA" />
+                <device id="pixel_2_xl" />
+                <device id="pixel_2" />
+                <devi
