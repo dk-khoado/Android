@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-    <component name="AndroidLayouts">
-        <shared>
-            <config>
-                <device id="pixel" />
-                <device id="2.7in QVGA" />
-                <device id
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+</resources>
