@@ -1,11 +1,40 @@
 package com.example.myapplication;
 
-public class User_contacts extends  MainActivity{
+import android.app.Application;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
+
+import java.io.SerializablePermission;
+
+public class User_contacts  extends  MainActivity{
     private  String name;
     private  String phoneNumber;
-    public  User_contacts(String mName, String mPhoneNu){
+    private String dia_chi;
+    private  String city;
+    public String getDia_chi() {
+        return dia_chi;
+    }
+
+    public void setDia_chi(String dia_chi) {
+        this.dia_chi = dia_chi;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+
+    public  User_contacts(String mName, String mPhoneNu, String DiaChi, String city_name){
         name = mName;
         phoneNumber = mPhoneNu;
+        this.dia_chi = DiaChi;
+        this.city = city_name;
     }
     public String getName() {
         return name;
@@ -23,5 +52,4 @@ public class User_contacts extends  MainActivity{
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
 }

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="btn_call">Call</string>
+    <string name="AddContacts">Thêm Số Liên lạc</string>
+    <string name="txt_Name">Tên: </string>
+    <string name="txt_phoneNumber">SĐT: </string>
+    <string name="txt_diaChi">Địa Chỉ:</string>
+    <string name="txt_city">Thành Phố:</string>
+    <string name="btn_back">Quay Lại</string>
 </resources>
