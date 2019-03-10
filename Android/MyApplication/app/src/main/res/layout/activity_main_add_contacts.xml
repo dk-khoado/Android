@@ -15,12 +15,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_Name"
-            android:textSize="25sp"/>
-        <TextView
+            android:textSize="20sp"/>
+        <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:id="@+id/txt_name"/>
     </LinearLayout>
 
@@ -32,13 +32,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_phoneNumber"
-            android:textSize="25sp"/>
-        <TextView
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/txt_sdt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:textSize="25sp"
-            android:id="@+id/txt_sdt"/>
+            android:inputType="number"
+            android:textSize="20sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,33 +50,35 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_diaChi"
-            android:textSize="25sp"/>
-        <TextView
+            android:textSize="20sp"/>
+        <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:id="@+id/txt_diaChi"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_city"
-            android:textSize="25sp"/>
-        <TextView
+            android:textSize="20sp" />
+        <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:id="@+id/txt_city"/>
     </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_back"
-        android:text="@string/btn_back"/>
+        android:text="@string/btn_back"
+        android:layout_gravity="center"/>
 </LinearLayout>

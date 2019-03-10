@@ -41,4 +41,10 @@
         android:layout_height="50dp"
         android:background="@drawable/img"
         />
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_delete_black_24dp"
+        />
 </LinearLayout>

@@ -30,21 +30,22 @@ public class ContactsAdapter extends ArrayAdapter<User_contacts> {
         TextView textView;
         Button button;
         TextView textViewSub;
-        LinearLayout layout;
+        Button delete;
         Button btnIcon;
     }
 
     //xử lý dư liệu để truyền lên listView
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View rowView = convertView;
+        final clsDataName clsDataName = new clsDataName();
         Viewholder viewholder = new Viewholder();
         if (rowView == null) {
             rowView = LayoutInflater.from(getContext()).inflate(groupID, parent, false);
             viewholder.textViewSub = rowView.findViewById(R.id.txt_sub);
             viewholder.textView = rowView.findViewById(R.id.txt);
             viewholder.button = rowView.findViewById(R.id.btn);
-            viewholder.layout = rowView.findViewById(R.id.lay_click);
+            viewholder.delete = rowView.findViewById(R.id.btn_delete);
             viewholder.btnIcon = rowView.findViewById(R.id.btnIcon);
         }else { viewholder = (Viewholder) rowView.getTag();}
 
@@ -58,33 +59,29 @@ public class ContactsAdapter extends ArrayAdapter<User_contacts> {
                 context.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + user.getPhoneNumber())));
             }
         });
-        viewholder.layout.setOnClickListener(new View.OnClickListener() {
+        //xóa
+        viewholder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Main_addContacts.class);
-                intent.putExtra("name",user.getName());
-                intent.putExtra("phone",user.getPhoneNumber());
-                intent.putExtra("diachi",user.getDia_chi());
-                intent.putExtra("city",user.getCity());
-                context.startActivity(intent);
+                MainActivity.user_contacts.remove(position);
+                notifyDataSetChanged();
             }
         });
+        //chuyển sang trang edit
         viewholder.btnIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Main_addContacts.class);
-                intent.putExtra("name",user.getName());
-                intent.putExtra("phone",user.getPhoneNumber());
-                intent.putExtra("diachi",user.getDia_chi());
-                intent.putExtra("city",user.getCity());
+                Intent intent = new Intent(context, EditContactsActivity.class);
+                intent.putExtra(clsDataName.array[0],user.getName());
+                intent.putExtra(clsDataName.array[1],user.getPhoneNumber());
+                intent.putExtra(clsDataName.array[2],user.getDia_chi());
+                intent.putExtra(clsDataName.array[3],user.getCity());
+                intent.putExtra("ID",user.getID());
+                intent.putExtra("index",position);
                 context.startActivity(intent);
             }
         });
         rowView.setTag(viewholder);
         return rowView;
-    }
-
-    public void Refresh() {
-        notifyDataSetChanged();
     }
 }

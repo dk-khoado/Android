@@ -9,6 +9,8 @@ import android.widget.Toast;
 import java.io.SerializablePermission;
 
 public class User_contacts  extends  MainActivity{
+
+    private int ID;
     private  String name;
     private  String phoneNumber;
     private String dia_chi;
@@ -16,7 +18,9 @@ public class User_contacts  extends  MainActivity{
     public String getDia_chi() {
         return dia_chi;
     }
-
+    public int getID() {
+        return ID;
+    }
     public void setDia_chi(String dia_chi) {
         this.dia_chi = dia_chi;
     }
@@ -30,7 +34,8 @@ public class User_contacts  extends  MainActivity{
     }
 
 
-    public  User_contacts(String mName, String mPhoneNu, String DiaChi, String city_name){
+    public  User_contacts(int ID,String mName, String mPhoneNu, String DiaChi, String city_name){
+        this.ID = ID;
         name = mName;
         phoneNumber = mPhoneNu;
         this.dia_chi = DiaChi;
