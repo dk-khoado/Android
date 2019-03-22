@@ -24,7 +24,7 @@
             android:textColor="@color/colorBlack"/>
 
         <EditText
-            android:id="@+id/editUsername"
+            android:id="@+id/edit_R_Username"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -47,7 +47,29 @@
             android:textColor="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/editPassword"
+            android:id="@+id/edit_R_Password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:inputType="textPassword" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Re_password"
+            android:textColor="@color/colorBlack" />
+
+        <EditText
+            android:id="@+id/edit_R_CPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -55,8 +77,8 @@
             android:inputType="textPassword" />
     </LinearLayout>
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Login"/>
+        android:text="@string/Register"/>
 </LinearLayout>
