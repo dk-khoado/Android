@@ -4,11 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText edit_username, editPassword, editCpassword;
@@ -27,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!MainActivity.helper.CheckNameExsit(edit_username.getText().toString())) {
+                if (!LoginActivity.helper.CheckNameExsit(edit_username.getText().toString())) {
                     edit_username.setError("Tên đã tồn tại");
                 }
             }
@@ -43,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (valuable()) {
 
                     if (editPassword.getText().toString().equals(editCpassword.getText().toString())) {
-                        MainActivity.helper.Insert(edit_username.getText().toString(), editPassword.getText().toString());
+                        LoginActivity.helper.Insert(edit_username.getText().toString(), editPassword.getText().toString());
                         finish();
                     } else {
                         editCpassword.setError("Nhập lại éo đúng???");

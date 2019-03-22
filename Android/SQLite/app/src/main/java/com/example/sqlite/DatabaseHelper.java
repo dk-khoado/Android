@@ -6,6 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //properties table
@@ -21,11 +24,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             TABLE_a_password + " text not null);";
     //<--end
     private SQLiteDatabase database;
+    private SQLiteDatabase ReadDatabase;
     private static final String DATABASE_NAME = "SQL.db";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
         database = this.getWritableDatabase();
+        ReadDatabase = this.getReadableDatabase();
     }
 
     //thêm dữ liệu vào database
@@ -36,16 +41,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //xóa dữ liệu -->
     public void Delete(int ID) {
-        String delete = "delete * from where " + TABLE_a_id + " =" + ID;
+        String delete = "delete  from "+TABLE_NAME+" where " + TABLE_a_id + " =" + ID;
         database.execSQL(delete);
     }
 
     public void Delete(String name) {
-        String delete = "delete * from where " + TABLE_a_id + " =" + name;
+        String delete = "delete  from "+TABLE_NAME+" where " + TABLE_a_id + " =" + name;
         database.execSQL(delete);
     }
 //<--end
-
+    public  void Update(int ID, String name, String password){
+        String query = "update "+ TABLE_NAME+" set "+TABLE_a_username+"='"+name+"', "+TABLE_a_password+"= '"+password+"' where "+ TABLE_a_id+"="+ID;
+        database.execSQL(query);
+    }
+    /**
+     * Lấy dữ tất cả dữ liệu có trong database
+     */
+    public List<Users> getAllData(){
+        List<Users> getUser= new ArrayList<>();
+        String query = "select * from "+TABLE_NAME;
+        Cursor cursor =  ReadDatabase.rawQuery(query, null);
+        for (int i = 0; i < cursor.getCount(); i++ ){
+            cursor.moveToNext();
+            getUser.add(new Users(cursor.getInt(0),cursor.getString(1),cursor.getString(2)));
+        }
+        cursor.close();
+        return getUser;
+    }
     /**
      * kiểm tra tên đăng nhập và mật khẩu có đúng có trong database
      *
@@ -61,11 +83,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return false;
     }
+
+    /**
+     * kiểm tra xem tên đăng nhập đã có trong database chưa
+     * @param name tên đăng nhập
+     * @return trả về tên đăng nhập
+     */
     public boolean CheckNameExsit(String name){
         String query = "select *from " + TABLE_NAME + " where " + TABLE_a_username + "='"+name+"'";
         Cursor cursor = database.rawQuery(query, null);
         if(cursor.getCount() > 0){
-
             return false;
         }
         cursor.close();

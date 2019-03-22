@@ -5,4 +5,7 @@
     <string name="Login">Đăng Nhập</string>
     <string name="Re_password">Confirm Password</string>
     <string name="Register">Register</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
 </resources>
