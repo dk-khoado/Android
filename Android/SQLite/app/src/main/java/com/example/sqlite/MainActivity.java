@@ -1,5 +1,6 @@
 package com.example.sqlite;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static DatabaseHelper helper;
-    Button btnLogin;
+    Button btnLogin,btnRegister;
     EditText editUsername;
     EditText editPassword;
     @Override
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         init();
         helper = new DatabaseHelper(this);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,10 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i  = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
     }
     void init(){
-        btnLogin = findViewById(R.id.btn_login);
+        btnLogin = findViewById(R.id.btn_m_login);
+        btnRegister = findViewById(R.id.btn_m_register);
         editUsername = findViewById(R.id.editUsername);
         editPassword = findViewById(R.id.editPassword);
     }
