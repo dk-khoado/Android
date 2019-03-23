@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(Valiable()){
                     if (helper.CheckData(editUsername.getText().toString(), editPassword.getText().toString())){
                         Toast.makeText(LoginActivity.this, "Đăng Nhập thàng công", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        startActivity(new Intent(LoginActivity.this, FragmentActivity.class));
                     }
                     else {
                         Toast.makeText(LoginActivity.this, "Đăng Nhập thất bại", Toast.LENGTH_SHORT).show();

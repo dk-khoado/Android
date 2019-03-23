@@ -50,6 +50,7 @@ public class CustomAdapter extends ArrayAdapter<Users> {
         assert users != null;
         viewholder.name.setText(users.getName());
         viewholder.password.setText(users.getPassword());
+        //nút xóa
         viewholder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +68,9 @@ public class CustomAdapter extends ArrayAdapter<Users> {
                     @Override
                     public void onClick(View v) {
                         LoginActivity.helper.Delete(users.getId());
+                        usersList = LoginActivity.helper.getAllData();
                         dialogDelete.dismiss();
+                        notifyDataSetChanged();
                     }
                 });
                 btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -76,8 +79,10 @@ public class CustomAdapter extends ArrayAdapter<Users> {
                         dialogDelete.dismiss();
                     }
                 });
+                notifyDataSetChanged();
             }
         });
+        //sự kiện edit
         viewholder.btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +107,7 @@ public class CustomAdapter extends ArrayAdapter<Users> {
             public void onClick(View v) {
                 LoginActivity.helper.Update(ID, txtName.getText().toString(), edtiPassword.getText().toString());
                 HomeActivity.list = LoginActivity.helper.getAllData();
-                HomeActivity.adapter.notifyDataSetChanged();
+                notifyDataSetChanged();
                 dialogEdit.dismiss();
             }
         });
