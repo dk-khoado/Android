@@ -54,31 +54,34 @@ public class CustomAdapter extends ArrayAdapter<Users> {
         viewholder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LoginActivity.helper.Delete(users.getId());
+                MonhocFragment.list = LoginActivity.helper.getAllData();
+                notifyDataSetChanged();
                 //hiện dialog-->
-                dialogDelete = new Dialog(context);
-                dialogDelete.setContentView(R.layout.dialog_delete_layout);
-                dialogDelete.setTitle("Bạn có Muốn xóa");
-                dialogDelete.show();
+//                dialogDelete = new Dialog(context);
+//                dialogDelete.setContentView(R.layout.dialog_delete_layout);
+//                dialogDelete.setTitle("Bạn có Muốn xóa");
+//                dialogDelete.show();
                 //<--end
                 //ánh qua qua layout custom dialog-->
-                Button btnOK = dialogDelete.findViewById(R.id.btn_dialog_ok);
-                Button btnCancel = dialogDelete.findViewById(R.id.btn_dialog_cancel);
+//                Button btnOK = dialogDelete.findViewById(R.id.btn_dialog_ok);
+//                Button btnCancel = dialogDelete.findViewById(R.id.btn_dialog_cancel);
                 //<--end
-                btnOK.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        LoginActivity.helper.Delete(users.getId());
-                        usersList = LoginActivity.helper.getAllData();
-                        dialogDelete.dismiss();
-                        notifyDataSetChanged();
-                    }
-                });
-                btnCancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialogDelete.dismiss();
-                    }
-                });
+//                btnOK.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        LoginActivity.helper.Delete(users.getId());
+//                        usersList = LoginActivity.helper.getAllData();
+//                        dialogDelete.dismiss();
+//                        notifyDataSetChanged();
+//                    }
+//                });
+//                btnCancel.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        dialogDelete.dismiss();
+//                    }
+//                });
                 notifyDataSetChanged();
             }
         });

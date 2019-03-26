@@ -18,8 +18,8 @@ import java.util.List;
 
 public class MonhocFragment extends Fragment {
     ListView listView;
-    List<Users> list = new ArrayList<>();
-    CustomAdapter adapter;
+    static List<Users> list = new ArrayList<>();
+    static CustomAdapter adapter;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
