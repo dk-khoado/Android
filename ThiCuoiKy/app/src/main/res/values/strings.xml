@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Tíc Tắc</string>
+    <string name="username">User Name</string>
+    <string name="Password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="daTra">Đã Trả Sách</string>
+    <string name="chưaTra">Chưa Trả Sách</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="soLuong">Số Lượng:</string>
+    <string name="maSach">Mã Sách: </string>
+    <string name="tenSach">Tên Sách: </string>
+    <string name="tenTG">Tên Tác Giả: </string>
+    <string name="tenNXB">Tên NXB:</string>
+    <string name="theLoai">Thể Loại:</string>
+    <string name="btnAdd">Thêm Sách</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="so_sach_muon">Số Sách Mượn</string>
+    <string name="ngay_muon">Ngày Mượn: </string>
+    <string name="tenNguoiMuon">Tên Người Mượn: </string>
+    <string name="ba_cham">...</string>
+    <string name="btn_saveMember">Lưu</string>
+    <string name="themPhieu">Thêm Phiếu</string>
+    <string name="btn_addSach">thêm Sach</string>
+    <string name="them">Add</string>
+    <string name="btn_back">Hủy</string>
+    <string name="status">Đã Trả</string>
+    <string name="UPdate">Câp Nhập</string>
+    <string name="timKiem">Tìm Kiếm</string>
+    <string name="TrangThai">Trạng Thái</string>
+    <string name="sachDaMuon">Các Sách Đã Mượn</string>
+    <string name="TrangChu">Trang Chủ</string>
+    <string name="btn_traSach">Trả Sách</string>
+    <string name="btnRanDom">Create</string>
+    <string name="LichSu">Lịch Sử</string>
+    <string name="btn_Update">Cập Nhập</string>
+
+    <string-array name="type">
+        <item>Chính trị – pháp luật</item>
+        <item>Khoa học công nghệ – Kinh tế</item>
+        <item> Văn hóa xã hội – Lịch sử</item>
+        <item>Văn học nghệ thuật</item>
+        <item>Giáo trình</item>
+        <item>Truyện, tiểu thuyết</item>
+        <item>Tâm lý, tâm linh, tôn giáo</item>
+        <item>Sách thiếu nhi</item>
+        <item>Thể loại khác</item>
+    </string-array>
+</resources>
