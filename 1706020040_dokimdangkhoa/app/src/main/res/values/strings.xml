@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">1706020040_dokimdangkhoa</string>
+    <string name="login">Đăng Nhập</string>
+    <string name="chiTiet">Chi tiết</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_update">Update</string>
+    <string name="add">Thêm</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="Them">Thêm</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_back">Back</string>
+</resources>
