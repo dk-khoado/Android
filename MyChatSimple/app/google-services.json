@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "151604151827",
+    "firebase_url": "https://mychatsimple.firebaseio.com",
+    "project_id": "mychatsimple",
+    "storage_bucket": "mychatsimple.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151604151827:android:6195c7817b556d39",
+        "android_client_info": {
+          "package_name": "com.example.mychatsimple"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151604151827-cbg9isljv4l8045hk671brrr9m5kkiqm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mychatsimple",
+            "certificate_hash": "0efc4778e8cb4e84746784b6fad0d8f76679cc89"
+          }
+        },
+        {
+          "client_id": "151604151827-0093l13lislihl2pp4ai968fibe8cjhu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIlnAuLqLL8nZ-LGRxAkgDhanW864O4Cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151604151827-0093l13lislihl2pp4ai968fibe8cjhu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
